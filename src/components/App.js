@@ -32,8 +32,8 @@ const App =()=>{
         console.log(str1,str2)
         setName1(str1);
         setName2(str2);
-        if(str1.length!=0 && str2.length!=0){
-        setRelationship(Arr[(str1.length+str2.length)%6])}
+        setButtonClicked(true)
+        setRelationship(Arr[(str1.length+str2.length)%6])
 
 
     }
@@ -44,12 +44,10 @@ const App =()=>{
                <input name="name1" data-testid="input1" type="text" placeholder="Enter first name"  onChange={(e)=>setName1(e.target.value)}/>
                <input name="name2" data-testid="input2" type="text" placeholder="Enter second name"  onChange={(e)=>setName2(e.target.value)}/>
                <button type="submit" data-testid="calculate_relationship">Calculate Relationship Future</button>
-               <button onClick={()=>{setButtonClicked(true);setName1("");setName2("")}}data-testid="clear" type="reset">Clear</button>
+               <button onClick={()=>{setButtonClicked(true);setName1("");setName2("");setRelationship("")}}data-testid="clear" type="reset">Clear</button>
                </form>
-               {
-               relationship!=""&& buttonClicked==false&&
                <h3 data-testid="answer">{relationship}</h3>
-               }
+               
             </div>
             
         )
