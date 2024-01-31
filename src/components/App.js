@@ -41,8 +41,8 @@ const App =()=>{
             <div id="main">
                {/* Do not remove the main div */}
                <form onSubmit={calculateRelationship}>
-               <input data-testid="input1" type="text" placeholder="Enter first name"  onChange={(e)=>setName1(e.target.value)}/>
-               <input data-testid="input2" type="text" placeholder="Enter second name"  onChange={(e)=>setName2(e.target.value)}/>
+               <input name="name1" data-testid="input1" type="text" placeholder="Enter first name"  onChange={(e)=>setName1(e.target.value)}/>
+               <input name="name2" data-testid="input2" type="text" placeholder="Enter second name"  onChange={(e)=>setName2(e.target.value)}/>
                <button type="submit" data-testid="calculate_relationship">Calculate Relationship Future</button>
                <button onClick={()=>{setButtonClicked(true);setName1("");setName2("")}}data-testid="clear" type="reset">Clear</button>
                </form>
